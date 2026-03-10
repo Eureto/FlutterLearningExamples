@@ -21,10 +21,16 @@ void printUserInformation(){
 }
 
 void searchWikipedia(List<String>? arguments){
-  
-  if(arguments.isEmpty || arguments == null){
+  final String articleTitle;
+
+  if (arguments == null || arguments.isEmpty){
     print("Please provide titles:");
-    var articles = stdin.readLineSync() ?? "";
+    articleTitle = stdin.readLineSync() ?? "";
+  }else{
+    articleTitle = arguments.join(" ");
   }
-  print("Searching for $arguments");
-}
+  
+  print('Looking up articles about "$articleTitle". Please wait.');
+  print('Here ya go!');
+  print('(Pretend this is an article about "$articleTitle")');
+  }
